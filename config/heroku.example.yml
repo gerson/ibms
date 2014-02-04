@@ -1,0 +1,10 @@
+apps:
+  staging: myapp-staging
+  production: myapp
+development:
+  dropbox_app_key: "test"
+  dropbox_app_secret: "test"
+  dropbox_access_type: "test"
+  dropbox_access_token: "test"
+  dropbox_access_token_secret: "test"
+  dropbox_user_id: 11111111

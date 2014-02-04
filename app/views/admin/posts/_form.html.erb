@@ -1,0 +1,15 @@
+<%= semantic_form_for [:admin, @post] , :html => {:multipart => true} do |f| %>
+  <%= f.inputs "Publicación" do %>
+    <%= f.input :title, :label => 'Titulo' %>
+    <%= f.input :content, :label => 'Contenido', :as => :ckeditor %>
+    <%= f.input :author, :label => 'Autor' %>
+    <% unless @post.new_record? %>
+    <li>
+      <label class=" label">Imagen actual</label>
+      <%= image_tag @post.avatar.url(:thumb) %>
+    </li>
+    <% end %>
+    <%= f.input :avatar, :as => :file %>
+  <% end %>
+  <%= f.actions %>
+<% end %>
