@@ -1,0 +1,33 @@
+<% count = 0 %>
+<% @posts.each do |post| %>
+  <% count += 1 %>
+  <!-- Post Row -->
+  <% if count == 1 %>
+    <div class="row post_row">
+  <% end %>
+    <!-- Post -->
+    <div class="span4 post <%= 'last' if count == 3 %>">
+        <div class="img">
+          <%= link_to post_path(post) do %>
+            <%= image_tag post.avatar.url(:medium), :alt => post.title %>
+          <% end %>
+        </div>
+        <div class="text">
+            <h5><%= link_to truncate(post.title, :length => 25).html_safe, post_path(post) %></a></h5>
+            <span class="date"><%= post.created_at.strftime('%a, %d %b') %></span>
+            <p><%= truncate(post.content, :length => 200).html_safe %></p>
+        </div>
+        <div class="author_box">
+            <% references = post.author.split('-') %>
+            <h6><%= references[0] %></h6>
+            <p><%= references[1] %></p>
+        </div>
+        <%= link_to post_path(post), :class => 'plus_wrapper' do %>
+          <span>&#43;</span>
+        <% end %>
+    </div>
+  <% if count == 3 %>
+    </div>
+  <% end %>
+  <% count = 0 if count == 3 %>
+<% end %>

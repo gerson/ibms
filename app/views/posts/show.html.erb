@@ -6,284 +6,84 @@
     <div id="blog_post">
         <div class="container">
             <div class="section_header">
-                <h3>Blog Post</h3>
-
-                <input type="text" class="input-large search-query" placeholder="Search" />
+                <h3>Mensajes de Dios para tu vida</h3>
+                <%= form_tag posts_path, method: :get do %>
+                  <%= text_field_tag 'search', nil, :class => 'input-large search-query', :placeholder => 'Search' %>
+                <% end %>
             </div>
 
             <div class="row">
                 <div class="span8">
-                    <img class="post_pic" src="img/blog_post.jpg" />
+                    <%= image_tag @post.avatar.url(:large), :class => 'post_pic' %>
 
                     <div class="post_content">
-                        <h2>Clean Canvas beautiful responsive theme.</h2>
-                        <span class="date">Wed, 12 Dec.</span>
-                        <p>
-                            There are many variations of passages of Lorem Ipsum available, injected generators on the  embarrassing hidden in the middle all the dictionary of  randomised words which don’t look even slightly distracted by these distribution of letters, as opposed to using ‘Content here, content here making it look like readable English. Many desktop publishing packages and web page editors.
-                        </p>
-
-                        <p>
-                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don’t look even slightly believable. If you are anything embarrassing hidden in the middle of text. All the Lorem Ipsum necessary, making this the first true generator on the Internet. It uses an dictionary of over 200 Latin words, combined with a handful of non-characteristic words There are many variations necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Ipsum available, injected generators on the  embarrassing hidden distribution of letters, as opposed to using ‘Content here, content here making it look like readable English. Many desktop publishing packages and web page editors.</p>
-
-                        <p>
-                            There are many variations of passages of Lorem Ipsum available, injected generators on the  embarrassing hidden in the middle all the dictionary of  randomised words which don’t look even slightly distracted by these distribution of letters, as opposed to using ‘Content here, content here making it look like readable English. Many desktop publishing packages and web page editors.</p>
+                        <h2><%= @post.title %></h2>
+                        <span class="date"><%= @post.created_at.strftime('%a, %d %b') %></span>
+                        <%= @post.content.html_safe %>
 
                         <div class="author_box">
-                            <div class="author">Alejandra Galvan</div>
-                            <div class="area">Creative Director</div>
+                          <% references = @post.author.split('-') %>
+                          <div class="author"><%= references[0] %></div>
+                          <div class="area"><%= references[1] %></div>
                         </div>
-                    </div>
-
-                    <div class="comments">
-                        <h4>Comments</h4>
-
-                        <div class="comment">
-                            <div class="row">
-                                <div class="span1">
-                                    <img src="img/user-display.png" class="img-circle author_pic" />
-                                </div>
-                                <div class="span7">
-                                    <div class="name">
-                                        Alejandra Galvan
-                                        <a href="#" class="reply">Reply</a>
-                                    </div>
-                                    <div class="date">
-                                        Oct 12, 2012
-                                    </div>
-                                    <div class="response">
-                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="comment">
-                            <div class="row">
-                                <div class="span1">
-                                    <img src="img/user-display.png" class="img-circle author_pic" />
-                                </div>
-                                <div class="span7">
-                                    <div class="name">
-                                        Alejandra Galvan
-                                        <a href="#" class="reply">Reply</a>
-                                    </div>
-                                    <div class="date">
-                                        Oct 12, 2012
-                                    </div>
-                                    <div class="response">
-                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="comment reply_to">
-                            <div class="row">
-                                <div class="span1 offset1">
-                                    <img src="img/user-display.png" class="img-circle author_pic" />
-                                </div>
-                                <div class="span6">
-                                    <div class="name">
-                                        Alejandra Galvan
-                                        <a href="#" class="reply">Reply</a>
-                                    </div>
-                                    <div class="date">
-                                        Oct 12, 2012
-                                    </div>
-                                    <div class="response">
-                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="comment">
-                            <div class="row">
-                                <div class="span1">
-                                    <img src="img/user-display.png" class="img-circle author_pic" />
-                                </div>
-                                <div class="span7">
-                                    <div class="name">
-                                        Alejandra Galvan
-                                        <a href="#" class="reply">Reply</a>
-                                    </div>
-                                    <div class="date">
-                                        Oct 12, 2012
-                                    </div>
-                                    <div class="response">
-                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="new_comment">
-                        <h4>Add Comment</h4>
-                        <form />
-                            <div class="row">
-                                <div class="span4">
-                                    <input type="text" placeholder="Name" name="name" />
-                                </div>
-                                <div class="span4">
-                                    <input type="text" placeholder="Email" name="email" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="span8">
-                                    <textarea placeholder="Comments" rows="7"></textarea>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="span8">
-                                    <a href="#" class="btn send">Add comment</a>
-                                </div>
-                            </div>
-                        </form>
                     </div>
                 </div>
 
                 <!-- SideBar -->
                 <div class="span3 sidebar offset1">
-                    <div class="box">
-                        <div class="sidebar_header">
-                            <h4>Menu</h4>
-                        </div>
-
-                        <ul class="sidebar_menu">
-                            <ul>
-                                <li><a href="#">Coffee</a></li>
-                                <li><a href="#">Design</a></li>
-                                <li><a href="#">Music</a></li>
-                                <li><a href="#">Photography</a></li>
-                                <li><a href="#">Packaging   </a></li>
-                            </ul>
-                        </ul>
-                    </div>
 
                     <div class="box box2">
                         <div class="sidebar_header">
-                            <h4>Recent Posts</h4>
+                            <h4>Publicaciones recientes</h4>
                         </div>
 
-                        <div class="recent">
-                            <span>
-                                <img src="img/recent_photos.jpg" alt="" />
-                            </span>
-                            <p>There are many  embarrassing hidden in the middle of text.</p>
-                        </div>
-                        <div class="recent">
-                            <span>
-                                <img src="img/recent_photos.jpg" alt="" />
-                            </span>
-                            <p>There are many  embarrassing hidden in the middle of text.</p>
-                        </div>
+                        <% @posts.each do |post| %>
+                          <div class="recent">
+                            <%= link_to post_path(post) do %>
+                              <span>
+                                  <%= image_tag post.avatar.url(:thumb) %>
+                              </span>
+                              <p><%= truncate(post.title, :length => 45) %></p>
+                            <% end %>
+                          </div>
+                        <% end %>
                     </div>
 
                     <div class="box">
                         <div class="sidebar_header">
-                            <h4>Popular photos</h4>
+                            <h4>Anuncios</h4>
                         </div>
                         <ul class="recent_photos">
-                            <li>
-                                <a href="#"><img src="img/recent_photos.jpg" /></a></li>
-                            <li>
-                                <a href="#"><img src="img/recent_photos.jpg" /></a></li>
-                            <li>
-                                <a href="#"><img src="img/recent_photos.jpg" /></a></li>
-                            <li>
-                                <a href="#"><img src="img/recent_photos.jpg" /></a></li>
-                            <li>
-                                <a href="#"><img src="img/recent_photos.jpg" /></a></li>
-                            <li>
-                                <a href="#"><img src="img/recent_photos.jpg" /></a></li>
-                            <li>
-                                <a href="#"><img src="img/recent_photos.jpg" /></a></li>
-                            <li>
-                                <a href="#"><img src="img/recent_photos.jpg" /></a></li>
-                            <li>
-                                <a href="#"><img src="img/recent_photos.jpg" /></a></li>
+                            <% @ads.each do |ad| %>
+                              <li>
+                                <a href="#myModal" role="button" data-toggle="modal" data-load-remote="<%= ad_path(ad) %>" data-remote-target="#myModal .modal-body">
+                                  <% if ad.image_content_type.match('video') %>
+                                    <%= image_tag 'videos.jpg' %>
+                                  <% else %>
+                                    <%= image_tag ad.image.url(:medium) %>
+                                  <% end %>
+                                </a>
+                              </li>
+                            <% end %>
                         </ul>
-                    </div>
-
-                    <div class="box last">
-                        <div class="sidebar_header">
-                            <h4>Archives</h4>
-                        </div>
-
-                        <ul class="sidebar_menu">
-                            <ul>
-                                <li><a href="#">January 2012</a></li>
-                                <li><a href="#">May 2012</a></li>
-                                <li><a href="#">August 2011</a></li>
-                                <li><a href="#">October 2011</a></li>
-                            </ul>
-                        </ul>
+                        <%= render :partial => 'ads/ads_modal' %>
                     </div>
                 </div>
             </div>
         </div>
 
-    <!-- starts footer -->
-    <footer id="footer">
-        <div class="container">
-            <div class="row info">
-                <div class="span6 residence">
-                    <ul>
-                        <li>2301 East Lamar Blvd. Suite 140. City, Arlington.</li>
-                        <li>United States, Zip Code TX 76006.</li>
-                    </ul>
-                </div>
-                <div class="span5 touch">
-                    <ul>
-                        <li><strong>P.</strong> 1 817 274 2933</li>
-                        <li><strong>E.</strong><a href="#"> bootstrap@twitter.com</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row credits">
-                <div class="span12">
-                    <div class="row social">
-                        <div class="span12">
-                            <a href="#" class="facebook">
-                                <span class="socialicons ico1"></span>
-                                <span class="socialicons_h ico1h"></span>
-                            </a>
-                            <a href="#" class="twitter">
-                                <span class="socialicons ico2"></span>
-                                <span class="socialicons_h ico2h"></span>
-                            </a>
-                            <a href="#" class="gplus">
-                                <span class="socialicons ico3"></span>
-                                <span class="socialicons_h ico3h"></span>
-                            </a>
-                            <a href="#" class="flickr">
-                                <span class="socialicons ico4"></span>
-                                <span class="socialicons_h ico4h"></span>
-                            </a>
-                            <a href="#" class="pinterest">
-                                <span class="socialicons ico5"></span>
-                                <span class="socialicons_h ico5h"></span>
-                            </a>
-                            <a href="#" class="dribble">
-                                <span class="socialicons ico6"></span>
-                                <span class="socialicons_h ico6h"></span>
-                            </a>
-                            <a href="#" class="behance">
-                                <span class="socialicons ico7"></span>
-                                <span class="socialicons_h ico7h"></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row copyright">
-                        <div class="span12">
-                            © 2013 Clean Canvas. All rights reserved. Theme by Detail Canvas.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/theme.js"></script>
+    <%= render :partial => 'shared/footer', :locals => {:custom_style => nil } %>
+    <script type="text/javascript">
+      $('[data-load-remote]').on('click',function(e) {
+        e.preventDefault();
+        var $this = $(this);
+        var remote = $this.data('load-remote');
+        if(remote) {
+          $('.modal-body').html("<img src='../assets/loading.gif' />");
+          $($this.data('remote-target')).load(remote, function( response, status, xhr ) {
+          });
+        }
+      });
+    </script>
 </div></body>
 </html>

@@ -1,0 +1,12 @@
+<%= semantic_form_for [:admin, @advert] , :html => {:multipart => true} do |f| %>
+  <%= f.inputs "Anuncios" do %>
+    <% unless @advert.new_record? %>
+    <li>
+      <label class=" label">Imagen actual</label>
+      <%= image_tag @advert.image.url(:thumb) %>
+    </li>
+    <% end %>
+    <%= f.input :image, :as => :file %>
+  <% end %>
+  <%= f.actions %>
+<% end %>

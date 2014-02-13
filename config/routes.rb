@@ -10,6 +10,8 @@ Ibms::Application.routes.draw do
   get "about_us", :action => :about_us, :controller => :homes
 
   resources :posts, only: [:show, :index]
+  resources :ads, only: [:show]
+  resources :messages, only: [:create]
 
 end
 

@@ -4,7 +4,7 @@
 #blog_post .section_header input[type="text"]{
 	float: right;
 	margin-top: 9px;
-	background: url('../img/search.png') #fff no-repeat 5px;
+	background: url('../assets/search.png') #fff no-repeat 5px;
 	padding-left: 28px;
 	width: 18%;
 	border-radius: 5px;
@@ -242,7 +242,7 @@
 	margin-bottom: 11px;
 }
 #blog_post .sidebar ul.recent_photos li a img {
-	max-width: 55px;
+	max-width: 215px;
 	margin-right: 9px;
 	border-radius: 3px;
 }
@@ -277,13 +277,13 @@
 	}
 }
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) { 
+@media (min-width: 768px) and (max-width: 979px) {
 }
 @media (max-width: 979px) {
-	
+
 }
 @media (min-width: 980px) {
-	
+
 }
 /* Large desktop */
 @media (min-width: 1200px) {
