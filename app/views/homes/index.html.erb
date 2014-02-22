@@ -93,7 +93,7 @@
                             <%= image_tag post.avatar.url(:medium), :class => 'img-circle', :style => 'width:62px;height: 62px;'%>
                           </a>
                           <div class="date">
-                              <%= post.created_at.strftime('%a, %d %b') %>
+                              <%= l post.created_at, :format => :custom %>
                           </div>
                           <a href="<%= post_path(post)%>" class="title">
                               <%= post.title %>
