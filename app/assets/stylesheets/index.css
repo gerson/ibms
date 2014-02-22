@@ -302,6 +302,7 @@
 }
 #features .feature .info p {
     margin-top: 15px;
+    text-align: justify;
 }
 
 /* Pricing charts
