@@ -5,12 +5,15 @@
 
     <div id="contact">
         <div class="container">
-            <div class="section_header">
-                <h3>Get in touch</h3>
+            <div class="section_header" style="margin-bottom:0px;">
+                <h3>Contactanos</h3>
             </div>
             <div class="row contact">
                 <p>
-                    We’d love to hear from you. Interested in working together? Fill out the form below with some info about your project and I will get back to you as soon as I can. Please allow a couple days for me to respond.</p>
+                  En la Iglesia Bautista Monte de Sion deseamos escuchar y conocer sus dudas o peticiones de oración para poderles apoyar en éstas. Recuerda que la oración eficaz del justo puede mucho (Santiago 5:16).
+                </br>
+                  Por favor llene el formulario que encontrará a continuación y luego de click en "Enviar." Te respondéremos tan pronto como sea posible. Que tengas buen día y que el Señor te bendiga.
+                </p>
 
                 <%= form_for Message.new do |f| %>
                   <div class="row form">
@@ -32,6 +35,7 @@
                             <%= f.submit "Enviar" %>
                         </div>
                     </div>
+                  </div>
                 <% end %>
             </div>
         </div>
@@ -41,25 +45,28 @@
                 <div class="span5 box_wrapp">
                     <div class="box_cont">
                         <div class="head">
-                            <h6>Contacto</h6>
+                            <h6>Visitanos</h6>
                         </div>
                         <ul class="street">
                             <li>Cra 4B # 23 - 77 Simón Bolivar.</li>
                             <li>Barranquilla, Atlantico. Colombia,</li>
                             <li class="icon icontop">
                                 <span class="contacticos ico1"></span>
-                                <span class="text">+57 035 3269648</span>
+                                <span class="text">+57 5 3269648</span>
                             </li>
                             <li class="icon">
                                 <span class="contacticos ico2"></span>
-                                <a class="text" href="#">bautistamontedesion@gmail.com</a>
+                                <a class="text" href="mailto:bautistamontedesion@gmail.com?Subject=Contacto" target="_top">bautistamontedesion@gmail.com</a>
                             </li>
                         </ul>
 
                         <div class="head headbottom">
-                            <h6>Contactanos</h6>
+                          <p>
+                            Porque mejor es un día en tus atrios que mil fuera de ellos.
+                            Escogería antes estar a la puerta de la casa de mi Dios,
+                            Que habitar en las moradas de maldad. (Salmos 84:10)
+                          </p>
                         </div>
-                        <p>Nuestro grupo de oración se encuentra dispuesto a interceder por tu necesidad no dudes en comunicarte con nosotros. Para Dios nada es imposible.</p>
 
                         <a href="#" class="btn">Contactar</a>
                     </div>

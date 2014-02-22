@@ -8,7 +8,7 @@
             <div class="section_header">
                 <h3>Mensajes de Dios para tu vida</h3>
                 <%= form_tag posts_path, method: :get do %>
-                  <%= text_field_tag 'search', nil, :class => 'input-large search-query', :placeholder => 'Search' %>
+                  <%= text_field_tag 'search', nil, :class => 'input-large search-query', :placeholder => 'Buscar' %>
                 <% end %>
             </div>
 
@@ -27,6 +27,10 @@
                           <div class="area"><%= references[1] %></div>
                         </div>
                     </div>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=<%= request.original_url %>" target="_blank" onclick="window.open(this.href, 'mywin','left=20,top=20,width=670,height=290,toolbar=1,resizable=0'); return false;">
+                      <img class="img" src="https://fbstatic-a.akamaihd.net/rsrc.php/v2/yQ/r/7GFXgco-uzw.png" alt="" width="14" height="14">
+                      Compartir en Facebook
+                    </a>
                 </div>
 
                 <!-- SideBar -->

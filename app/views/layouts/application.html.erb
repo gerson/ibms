@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ibms</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -11,10 +10,11 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <%= render "shared/meta_tags_for_seo" %>
 </head>
 <body>
 
 <%= yield %>
-
+<%= render "shared/gaq" %>
 </body>
 </html>
