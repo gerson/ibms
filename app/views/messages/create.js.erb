@@ -1,5 +1,6 @@
 <% if @error %>
   $('.errors').html("<div class= 'alert alert-error' ><a href='#' class='close' data-dismiss='alert'>&times;</a><%= @result %></div>");
 <% else %>
+  $('#new_message')[0].reset();
   $('.errors').html("<div class= 'alert alert-success' ><a href='#' class='close' data-dismiss='alert'>&times;</a><%= @result %></div>");
 <% end %>
