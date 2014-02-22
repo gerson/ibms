@@ -2,12 +2,13 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(params[:message])
+    @error = true
     if @message.valid?
-      # TODO send message here
-      flash[:notice] = "Message sent! Thank you for contacting us."
-      redirect_to root_url
+      ContactMailer.contact_email(params[:message]).deliver
+      @error = false
+      @result = 'Su mensaje ha sido enviado exitosamente.'
     else
-      #render :action => 'new'
+      @result = @message.errors.full_messages.to_sentence
     end
   end
 end

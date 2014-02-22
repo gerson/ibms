@@ -25,12 +25,13 @@
                   Por favor llene el formulario que encontrará a continuación y luego de click en "Enviar." Te respondéremos tan pronto como sea posible. Que tengas buen día y que el Señor te bendiga.
                 </p>
 
-                <%= form_for Message.new do |f| %>
+                <%= form_for Message.new, :remote => true do |f| %>
                   <div class="row form">
+                    <div class="errors"></div>
                     <div class="span6 box">
                       <%= f.text_field :name, :class => 'name', :placeholder => "Nombre" %>
                       <%= f.text_field :email, :class => 'mail', :placeholder => "Correo" %>
-                      <%= f.text_field :phone, :class => 'phone', :placeholder => "Telefono" %>
+                      <%= f.text_field :phone, :class => 'phone', :placeholder => "Teléfono" %>
                     </div>
                     <div class="span6 box box_r">
                       <%= f.text_area :content, :placeholder => "Escribe tu mensaje aquí..." %>

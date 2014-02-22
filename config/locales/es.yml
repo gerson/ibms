@@ -201,6 +201,13 @@ es:
   activemodel:
     errors:
       <<: *errors
+    models:
+      message: "Mensaje"
+    attributes:
+      message:
+        name: "Nombre"
+        phone: "Teléfono"
+        email: "Correo"
   activerecord:
     errors:
       <<: *errors
