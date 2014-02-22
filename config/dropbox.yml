@@ -1,7 +1,14 @@
 development:
-  app_key: <%= ENV['DROPBOX_APP_KEY'] %>
-  app_secret: <%= ENV['DROPBOX_APP_SECRET'] %>
-  access_type: <%= ENV['DROPBOX_ACCESS_TYPE'] %>
-  access_token: <%= ENV['DROPBOX_ACCESS_TOKEN'] %>
-  access_token_secret: <%= ENV['DROPBOX_ACCESS_TOKEN_SECRET'] %>
-  user_id: <%= ENV['DROPBOX_USER_ID'] %>
+  app_key: <%= ENV['DEV_DROPBOX_APP_KEY'] %>
+  app_secret: <%= ENV['DEV_DROPBOX_APP_SECRET'] %>
+  access_type: <%= ENV['DEV_DROPBOX_ACCESS_TYPE'] %>
+  access_token: <%= ENV['DEV_DROPBOX_ACCESS_TOKEN'] %>
+  access_token_secret: <%= ENV['DEV_DROPBOX_ACCESS_TOKEN_SECRET'] %>
+  user_id: <%= ENV['DEV_DROPBOX_USER_ID'] %>
+production:
+  app_key: <%= ENV['PROD_DROPBOX_APP_KEY'] %>
+  app_secret: <%= ENV['PROD_DROPBOX_APP_SECRET'] %>
+  access_type: <%= ENV['PROD_DROPBOX_ACCESS_TYPE'] %>
+  access_token: <%= ENV['PROD_DROPBOX_ACCESS_TOKEN'] %>
+  access_token_secret: <%= ENV['PROD_DROPBOX_ACCESS_TOKEN_SECRET'] %>
+  user_id: <%= ENV['PROD_DROPBOX_USER_ID'] %>
