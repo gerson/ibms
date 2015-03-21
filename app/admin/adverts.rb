@@ -5,6 +5,8 @@ ActiveAdmin.register Advert do
     column :image do |ad|
       image_tag ad.image.url(:thumb)
     end
+    column :slider
+    column :ads
     default_actions
   end
 
@@ -13,6 +15,8 @@ ActiveAdmin.register Advert do
       row :avatar do
         image_tag(ad.image.url(:thumb))
       end
+      row :slider
+      row :ads
     end
   end
 end

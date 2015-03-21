@@ -14,18 +14,12 @@
     </div>
 
     <section id="feature_slider" class="">
-        <article class="slide" id="showcasing" style="background: url('assets/backgrounds/nuestros_servicios.jpg') repeat-x top center;">
-            <div class="info">
-            </div>
-        </article>
-        <article class="slide" id="ideas" style="background: url('assets/backgrounds/jovenes.png') repeat-x top center;">
-            <div class="info">
-            </div>
-        </article>
-        <article class="slide" id="tour" style="background: url('assets/backgrounds/mentoreo.jpg') repeat-x top center;">
-            <div class="info">
-            </div>
-        </article>
+      <% @ads.each do |ad| %>
+        <article class="slide" id="showcasing" style="background:url(<%= ad.image %>) repeat-x top center;">
+          <div class="info">
+          </div>
+      </article>
+      <% end %>
     </section>
 
     <div id="features">

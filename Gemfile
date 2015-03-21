@@ -5,10 +5,9 @@ ruby '1.9.2'
 gem 'rails', '3.2.11'
 gem "jquery-rails", "< 3.0.0"
 gem 'pg'
-gem 'heroku'
 gem 'paperclip-dropbox', '>= 1.1.7'
 gem 'activeadmin', '0.4.4'
-gem 'ckeditor', :git => 'git://github.com/pshoukry/ckeditor.git'
+gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'i18n', github: 'svenfuchs/i18n'
 gem 'sitemap'
 

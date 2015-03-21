@@ -1,10 +1,10 @@
 GIT
-  remote: git://github.com/pshoukry/ckeditor.git
-  revision: 9090ff6ff04a494c1a48781031c47749a20a922d
+  remote: git://github.com/galetahub/ckeditor.git
+  revision: 0efddf9a46bbba4aeda562ec0ea77af738404418
   specs:
-    ckeditor (4.0.0.rc2)
-      mime-types
-      orm_adapter
+    ckeditor (4.1.1)
+      cocaine
+      orm_adapter (~> 0.5.0)
 
 GIT
   remote: git://github.com/svenfuchs/i18n.git
@@ -53,7 +53,6 @@ GEM
     activesupport (3.2.11)
       i18n (~> 0.6)
       multi_json (~> 1.0)
-    addressable (2.3.5)
     arel (3.0.2)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
@@ -82,7 +81,6 @@ GEM
     dropbox-sdk (1.6.3)
       json
     erubis (2.7.0)
-    excon (0.25.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (3.5.0)
@@ -96,14 +94,6 @@ GEM
     has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
-    heroku (2.40.0)
-      heroku-api (~> 0.3.7)
-      launchy (>= 0.3.2)
-      netrc (~> 0.7.7)
-      rest-client (~> 1.6.1)
-      rubyzip
-    heroku-api (0.3.15)
-      excon (~> 0.25.1)
     hike (1.2.3)
     inherited_resources (1.4.1)
       has_scope (~> 0.6.0.rc)
@@ -116,8 +106,6 @@ GEM
     kaminari (0.15.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    launchy (2.3.0)
-      addressable (~> 2.3)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -129,7 +117,6 @@ GEM
       polyamorous (~> 0.5.0)
     mime-types (1.24)
     multi_json (1.8.4)
-    netrc (0.7.7)
     orm_adapter (0.5.0)
     paperclip (3.5.3)
       activemodel (>= 3.0.0)
@@ -170,8 +157,6 @@ GEM
       json (~> 1.4)
     responders (1.0.0)
       railties (>= 3.2, < 5)
-    rest-client (1.6.7)
-      mime-types (>= 1.16)
     rspec (2.10.0)
       rspec-core (~> 2.10.0)
       rspec-expectations (~> 2.10.0)
@@ -185,7 +170,6 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.10.0)
-    rubyzip (0.9.9)
     sass (3.2.10)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -224,7 +208,6 @@ DEPENDENCIES
   ckeditor!
   coffee-rails (~> 3.2.1)
   factory_girl_rails (~> 3.5.0)
-  heroku
   i18n!
   jquery-rails (< 3.0.0)
   paperclip-dropbox (>= 1.1.7)

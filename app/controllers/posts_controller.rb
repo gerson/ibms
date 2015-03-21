@@ -6,6 +6,6 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @posts = Post.where("id != ?", @post).limit(5).order("created_at DESC")
-    @ads = Advert.limit(5).order("RANDOM()")
+    @ads = Advert.where(ads: true).limit(5).order("RANDOM()")
   end
 end
