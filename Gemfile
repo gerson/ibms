@@ -23,3 +23,5 @@ group :test do
   gem 'factory_girl_rails', '~> 3.5.0'
   gem 'shoulda', '~> 3.0.1'
 end
+
+gem 'rails_12factor', group: :production
