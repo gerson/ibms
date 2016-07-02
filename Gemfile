@@ -10,9 +10,9 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'ckeditor'
 gem 'i18n', github: 'svenfuchs/i18n'
 gem 'sitemap'
-gem 'thin'
 gem 'devise'
 gem 'cancancan', '~> 1.10'
+gem 'puma'
 
 
 group :assets do
