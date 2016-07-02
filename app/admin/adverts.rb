@@ -10,7 +10,7 @@ ActiveAdmin.register Advert do
     end
     column :slider
     column :ads
-    default_actions
+    actions
   end
 
   show do |ad|

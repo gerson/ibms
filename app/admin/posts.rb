@@ -17,7 +17,7 @@ ActiveAdmin.register Post do
     column :author do |post|
       post.author
     end
-    default_actions
+    actions
   end
 
   show do |post|
