@@ -16,6 +16,7 @@ class Post < ActiveRecord::Base
 
   def self.search params
     return where(nil) if params.blank?
+    posts = where(nil)
     posts = posts.by_keyword(params) unless params.blank?
   end
 end
