@@ -1,10 +1,10 @@
 Ibms::Application.routes.draw do
 
+  root :to => 'homes#index'
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
-
-  root :to => 'homes#index'
 
   get "contact_us", :action => :contact_us, :controller => :homes
   get "about_us", :action => :about_us, :controller => :homes

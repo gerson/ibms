@@ -1,28 +1,30 @@
 source 'https://rubygems.org'
 
-ruby '1.9.2'
+ruby '2.2.4'
 
-gem 'rails', '3.2.11'
-gem "jquery-rails", "< 3.0.0"
+gem 'rails'
+gem "jquery-rails"
 gem 'pg'
-gem 'paperclip-dropbox', '>= 1.1.7'
-gem 'activeadmin', '0.4.4'
-gem 'ckeditor', '4.0.4'
+gem 'paperclip-dropbox'
+gem 'activeadmin', github: 'activeadmin'
+gem 'ckeditor'
 gem 'i18n', github: 'svenfuchs/i18n'
 gem 'sitemap'
 gem 'thin'
+gem 'devise'
+gem 'cancancan', '~> 1.10'
 
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
 end
 
 group :test do
-  gem 'rspec-rails', '~> 2.10.1'
-  gem 'factory_girl_rails', '~> 3.5.0'
-  gem 'shoulda', '~> 3.0.1'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'shoulda'
 end
 
 gem 'rails_12factor', group: :production

@@ -1,4 +1,7 @@
 ActiveAdmin.register Post do
+
+  permit_params :content, :title, :avatar, :author
+
   form :partial => "form"
 
   index do

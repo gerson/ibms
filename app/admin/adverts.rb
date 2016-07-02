@@ -1,4 +1,7 @@
 ActiveAdmin.register Advert do
+  
+  permit_params :ads, :slider, :image
+
   form :partial => "form"
 
   index do

@@ -1,5 +1,4 @@
 ActiveAdmin.setup do |config|
-
   # == Site Title
   #
   # Set the title that is displayed on the main layout
@@ -93,7 +92,7 @@ ActiveAdmin.setup do |config|
   # Admin comments are enabled by default.
   #
   # Default:
-  # config.allow_comments = true
+  config.comments = false
   #
   # You can turn them on and off for any given namespace by using a
   # namespace config block.
@@ -110,6 +109,10 @@ ActiveAdmin.setup do |config|
   # Active Admin resources from here.
   #
   # config.before_filter :do_something_awesome
+  config.authorization_adapter = ActiveAdmin::CanCanAdapter
+  config.on_unauthorized_access = :access_denied
+  config.cancan_ability_class = "Ability"
+
 
 
   # == Register Stylesheets & Javascripts

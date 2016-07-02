@@ -1,9 +1,5 @@
 class Advert < ActiveRecord::Base
 
-  attr_accessible :ads, :slider
-
-  attr_accessible :image
-
   has_attached_file :image,
     :storage => :dropbox,
     :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
