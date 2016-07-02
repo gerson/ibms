@@ -13,7 +13,7 @@ gem 'sitemap'
 gem 'devise'
 gem 'cancancan', '~> 1.10'
 gem 'puma'
-
+gem 'rails_serve_static_assets'
 
 group :assets do
   gem 'sass-rails'
