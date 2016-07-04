@@ -14,8 +14,9 @@
     </div>
 
     <section id="feature_slider" class="">
-    <!--<article class="slide" id="showcasing" style="background:url(<%= asset_path("backgrounds/jovenes.png") %>) repeat-x top center;">-->
-
+    <!--<article class="slide" id="showcasing" style="background:url(<%= asset_path("backgrounds/jovenes.png") %>) no-repeat center; background-size: 100% 100% !important;">
+-->
+    
       <% @ads.each do |ad| %>
        <article class="slide" id="showcasing" style="background:url(<%= ad.image %>) repeat-x top center;">
      
@@ -32,9 +33,7 @@
                 <h3>Nuestra Iglesia</h3>
             </div>
             <div class="row feature">
-                <div class="span6 l_b_radius">
-                    <img src=<%= asset_path("familia.jpg") %> class="landing-image-size"/>
-                </div>
+                
                 <div class="span6 info">
                     <h3>
                         Familia
@@ -45,8 +44,12 @@
                         Soportándoos unos a otros y, si uno tiene una queja contra otro, perdónense mutuamente, como Cristo os perdonó, así también hacedlo vosotros – Colosenses 3:13
                     </p>
                 </div>
+                <div class="span6 l_b_radius">
+                    <img src=<%= asset_path("familia.jpg") %> class="landing-image-size"/>
+                </div>
             </div>
-            <div class="row feature ss">
+
+            <div class="row feature">
                 <div class="span6 info">
                     <h3>
                         Jovenes
@@ -62,10 +65,10 @@
                     <img src=<%= asset_path("jovenes.jpg") %> class="pull-right" class="landing-image-size"/>
                 </div>
             </div>
-            <div class="row feature ss">
-                <div class="span6 l_b_radius">
-                    <img src=<%= asset_path("ninos.jpg") %> class="landing-image-size"/>
-                </div>
+
+
+            <div class="row feature">
+               
                 <div class="span6 info">
                     <h3>
                         Niños
@@ -76,6 +79,9 @@
                         "Jesus Dijo: Dejad a los niños venir a mí, y no se lo impidáis; porque de los tales es el reino de los cielos. "Mateo. 19:14
 
                         <i>Escuela Dominical para niños Domingos 9:30 Am</i>
+                </div>
+                 <div class="span6 l_b_radius">
+                    <img src=<%= asset_path("ninos.jpg") %> class="landing-image-size"/>
                 </div>
             </div>
         </div>
@@ -145,7 +151,9 @@
       <div class="section_header text-center">
           <h3>Calendario</h3>
       </div>
-          <iframe src="https://calendar.google.com/calendar/embed?showPrint=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=bautistamontedesion%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FBogota" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+      <div class="span12">
+          <iframe src="https://calendar.google.com/calendar/embed?showPrint=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=bautistamontedesion%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FBogota" style="border-width:0" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+      </div>
     </div>
   </div>
 <!--
