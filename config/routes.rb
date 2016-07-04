@@ -8,6 +8,7 @@ Ibms::Application.routes.draw do
 
   get "contact_us", :action => :contact_us, :controller => :homes
   get "about_us", :action => :about_us, :controller => :homes
+  get "eres_nuevo", :action => :eres_nuevo, :controller => :homes
 
   resources :posts, only: [:show, :index]
   resources :ads, only: [:show]

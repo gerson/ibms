@@ -1,0 +1,120 @@
+<% content_for :title do %>
+ Iglesia Bautista Monte de Sion - Acerca de nosotros
+<% end %>
+<% content_for :description do %>
+ Sitio oficial de la Iglesia Iglesia Bautista Monte de Sion en Barranquilla Colombia. Lugar de bendición.
+<% end %>
+<% content_for :keywords do %>
+ iglesia, Dios, bautista, bautista monte de sion, Iglesia Bautista Monte de Sion Barranquilla, ibms barranquilla, ibms, bautistamontedesion
+<% end %>
+<style>
+	h4{
+		background: none;
+	}
+	p{
+		text-align: justify;
+		line-height: 30px;
+	}
+</style>
+<body class='pull_top'>
+    <div class="navbar transparent navbar-inverse navbar-static-top">
+      <%= render 'shared/header' %>
+    </div>
+
+    <div class="container">
+		<div class="row">
+			<div class="span8">
+				<img src="<%= asset_path('logo.png')%>" alt=""> 
+				<p>¡Qué maravilloso y agradable es cuando los hermanos conviven en armonía!
+				Salmos 133:1</p>
+		
+			
+				<h2>Bienvenido</h2>
+				
+				<p>Queremos que te sientas en casa.<br>
+				En la IGLESIA BAUTISTA MONTE DE SION encontrarás un lugar donde puedes compartir tus pensamientos, y a la vez, conocer personas que al igual que tú, desean conocer más a Dios. Los Grupos de Amistad son el lugar perfecto para que puedas comenzar a establecer estos lazos. En los Grupos de Amistad, hallarás cerca a tu casa un sitio en el cual recibirás consejo y oración durante la semana.
+
+				Diligenciando este formulario te ayudaremos a integrarte a un grupo de amistad de acuerdo a tu perfil.
+				</p>
+			
+				<%= form_for Message.new, :remote => true do |f| %>
+
+                   <div class="row form">
+                    <div class="errors"></div>
+                    
+                    <div class="span8 box">
+           <%= f.text_field :name, :class => 'name', :placeholder => "Nombre" %>
+           <%= f.text_field :phone, :class => 'last_name', :placeholder => "Apellido" %>
+           <%= f.text_field :email, :class => 'mail', :placeholder => "Correo" %>
+           <%= f.text_field :phone, :class => 'phone', :placeholder => "Teléfono/celular" %>
+           <%= f.text_field :phone, :class => 'phone', :placeholder => "Dirección" %>
+
+
+                    </div>
+                    
+                    <div class="row submit">
+                        <div class="span5 box">
+                            <label class="checkbox">
+                                <!-- <input type="checkbox" /> Suscríbete a nuestros mensajes diarios. -->
+                            </label>
+                        </div>
+                        <div class="span3 right">
+                            <%= f.submit "Enviar" %>
+                        </div>
+                    </div>
+                  </div>
+                <% end %>
+			</div>
+
+			 <!-- SideBar -->
+                <div class="span3 sidebar offset1">
+
+                    <div class="box box2">
+                        <div class="sidebar_header">
+                            <h4>Publicaciones recientes</h4>
+                        </div>
+
+                        <% @posts.each do |post| %>
+                          <div class="recent">
+                            <%= link_to post_path(post) do %>
+                              <span>
+                                  <%= image_tag post.avatar.url(:thumb) %>
+                              </span>
+                              <p><%= truncate(post.title, :length => 45) %></p>
+                            <% end %>
+                          </div>
+                        <% end %>
+                    </div>
+
+                    <div class="box">
+                        <div class="sidebar_header">
+                            <h4>Anuncios</h4>
+                        </div>
+                        <ul class="recent_photos">
+                            <% @ads.each do |ad| %>
+                              <li>
+                                <a href="#myModal" role="button" data-toggle="modal" data-load-remote="<%= ad_path(ad) %>" data-remote-target="#myModal .modal-body">
+                                  <% if ad.image_content_type.match('video') %>
+                                    <%= image_tag 'videos.jpg' %>
+                                  <% else %>
+                                    <%= image_tag ad.image.url(:medium) %>
+                                  <% end %>
+                                </a>
+                              </li>
+                            <% end %>
+                        </ul>
+                        <%= render :partial => 'ads/ads_modal' %>
+                    </div>
+                </div>
+		</div>
+	</div>
+
+
+
+
+
+
+       <%= render :partial => 'shared/footer', :locals => {:custom_style => nil } %>
+
+       </body>
+       </html>

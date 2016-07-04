@@ -11,4 +11,8 @@ class HomesController < ApplicationController
   def about_us
   end
 
+  def eres_nuevo
+    @posts = Post.where("id != ?", @post).limit(5).order("created_at DESC")
+    @ads = Advert.where(ads: true).limit(5).order("RANDOM()")
+  end
 end
