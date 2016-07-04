@@ -106,7 +106,7 @@ GEM
     formtastic_i18n (0.6.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
-    has_scope (0.6.0)
+    has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     inherited_resources (1.6.0)
@@ -265,5 +265,8 @@ DEPENDENCIES
   sitemap
   uglifier
 
+RUBY VERSION
+   ruby 2.2.4p230
+
 BUNDLED WITH
-   1.11.2
+   1.12.5

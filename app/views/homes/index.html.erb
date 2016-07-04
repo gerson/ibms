@@ -14,9 +14,13 @@
     </div>
 
     <section id="feature_slider" class="">
+    <!--<article class="slide" id="showcasing" style="background:url(<%= asset_path("backgrounds/jovenes.png") %>) repeat-x top center;">-->
+
       <% @ads.each do |ad| %>
-        <article class="slide" id="showcasing" style="background:url(<%= ad.image %>) repeat-x top center;">
+       <article class="slide" id="showcasing" style="background:url(<%= ad.image %>) repeat-x top center;">
+     
           <div class="info">
+
           </div>
       </article>
       <% end %>
@@ -76,6 +80,96 @@
             </div>
         </div>
     </div>
+
+    <div class="container">
+      <div class="row text-center">
+     
+      <div class="section_header">
+           <h3>Nuestros Servicios</h3>
+      </div>
+           <div class="span3">
+             <h4>Martes</h4>
+             <p>Culto de Oración<br><b>6:30 p.m</b></p>  
+           </div>
+           <div class="span3">
+             <h4>Jueves</h4>
+             <p>Estudio Bíblico<br><b>6:30 p.m</b></p>
+           </div>
+            <div class="span3">
+             <h4>Sábado</h4>
+             <p>Reunión Juvenil<br><b>6:00 p.m</b></p>
+           </div>
+            <div class="span3">
+             <h4>Domingo</h4>
+             <p>Escuela Dominical<br>
+             <b>9:30 a.m</b></p>
+           </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+  
+    <div class="container">
+      <div class="row text-left">
+          <div class="section_header text-center">
+          <h3>Próximos Eventos</h3>
+          </div>
+
+          <div class="span4">
+            <h4>Conferencia Juvenil</h4>
+            <%= image_tag asset_path("jovenes.jpg")%>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam eum perferendis, ratione placeat laborum</p>
+           <%= link_to "Más informacion" %>>
+          </div>
+          <div class="span4">
+            <h4>Conferencia de Parejas</h4>
+             <%= image_tag asset_path("jovenes.jpg")%>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam eum perferendis, ratione placeat laborum</p>
+            <%= link_to "Más informacion" %>>
+          </div>
+          <div class="span4">
+            <h4>Campaña Evangelistica</h4>
+            <%= image_tag asset_path("jovenes.jpg")%>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam eum perferendis, ratione placeat laborum</p>
+           <!-- <a href="#">Más información</a>-->
+           <%= link_to "Más informacion" %>
+          </div>
+        </div>
+   </div>
+  
+  <br>
+  
+  <div class="container">
+    <div class="row">
+      <div class="section_header text-center">
+          <h3>Calendario</h3>
+      </div>
+          <iframe src="https://calendar.google.com/calendar/embed?showPrint=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=bautistamontedesion%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FBogota" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </div>
+<!--
+  <div class="container">
+    <div class="row">  
+       <h4>Anuncios</h4>
+                
+         <ul class="recent_photos">
+             <% @ads.each do |ad| %>
+                <li>
+                  <a href="#myModal" role="button" data-toggle="modal" data-load-remote="<%= ad_path(ad) %>" data-remote-target="#myModal .modal-body">
+                          <% if ad.image_content_type.match('video') %>
+                              <%= image_tag 'videos.jpg' %>
+                                  <% else %>
+                                    <%= image_tag ad.image.url(:medium) %>
+                                     <% end %>
+                  </a>
+                </li>
+               <% end %>
+          </ul>
+         <%= render :partial => 'ads/ads_modal' %>
+    </div>
+  </div>-->
+
 
     <!-- starts footer -->
     <footer id="footer">
