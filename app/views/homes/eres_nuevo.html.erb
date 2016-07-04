@@ -37,34 +37,7 @@
 				Diligenciando este formulario te ayudaremos a integrarte a un grupo de amistad de acuerdo a tu perfil.
 				</p>
 			
-				<%= form_for Message.new, :remote => true do |f| %>
-
-                   <div class="row form">
-                    <div class="errors"></div>
-                    
-                    <div class="span8 box">
-           <%= f.text_field :name, :class => 'name', :placeholder => "Nombre" %>
-           <%= f.text_field :phone, :class => 'last_name', :placeholder => "Apellido" %>
-           <%= f.text_field :email, :class => 'mail', :placeholder => "Correo" %>
-           <%= f.text_field :phone, :class => 'phone', :placeholder => "Teléfono/celular" %>
-           <%= f.text_field :phone, :class => 'phone', :placeholder => "Dirección" %>
-
-
-                    </div>
-                    
-                    <div class="row submit">
-                        <div class="span5 box">
-                            <label class="checkbox">
-                                <!-- <input type="checkbox" /> Suscríbete a nuestros mensajes diarios. -->
-                            </label>
-                        </div>
-                        <div class="span3 right">
-                            <%= f.submit "Enviar" %>
-                        </div>
-                    </div>
-                  </div>
-                <% end %>
-			</div>
+				</div>
 
 			 <!-- SideBar -->
                 <div class="span3 sidebar offset1">
