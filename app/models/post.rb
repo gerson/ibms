@@ -6,7 +6,9 @@ class Post < ActiveRecord::Base
     :dropbox_options => {environment: ENV["RACK_ENV"]},
     :styles => { :large =>"634x422", :medium => "376x250>", :thumb => "40x40>" }
 
-  default_scope { order(created_at: :desc) } 
+  validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
+  default_scope { order(created_at: :desc) }
 
   scope :by_keyword, lambda { |keyword=nil|
     where('posts.title ILIKE ? OR posts.content ILIKE ? OR posts.author ILIKE ?',
